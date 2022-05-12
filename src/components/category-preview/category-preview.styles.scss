@@ -1,0 +1,32 @@
+.category-preview-container {
+   padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    gap: 20px;
+    text-align: center;
+  
+  
+    .title {
+      font-size: 38px;
+      cursor: pointer;
+      padding: 10px 15px;
+      border: 2px;
+      color: white;
+      background-color: rgb(36, 36, 36);
+
+      &:hover {
+        background-color:white;
+        color: rgb(36, 36, 36);
+        border: 1px solid rgb(36, 36, 36);
+        }
+    }
+  
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+      
+    }
+  }
+  

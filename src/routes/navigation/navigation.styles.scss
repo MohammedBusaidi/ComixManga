@@ -1,0 +1,48 @@
+.nav-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.nav-link-shop{
+  padding: 10px 15px;
+    cursor: pointer; 
+    border: 2px;
+    color: rgb(33,37,41);
+    background-color: white;
+    display: flex;
+
+      &:hover {
+        background-color:rgb(33,37,41);
+        color: white;
+        border: 1px solid white;
+        }
+}
+.nav-links-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+
+  .nav-link {
+    padding: 10px 15px;
+    cursor: pointer; 
+  }
+
+  .nav-link-sign-in {
+    padding: 10px 15px;
+    cursor: pointer; 
+    border: 2px;
+    color: rgb(33,37,41);
+    background-color: white;
+
+      &:hover {
+        background-color:rgb(33,37,41);
+        color: white;
+        border: 1px solid white;
+        }
+  }
+}
