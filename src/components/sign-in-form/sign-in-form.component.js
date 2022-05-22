@@ -4,6 +4,8 @@ import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEm
 import './sign-in-form.styles.scss';
 import Button from '../button/button.component';
 import Swal from 'sweetalert2';
+import usePasswordToggle from '../password-visibilty-hook/usePasswordToggle';
+import { Link } from 'react-router-dom';
 
 const defaultFormFields = {
     email: '',
@@ -13,6 +15,7 @@ const defaultFormFields = {
 const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields)
     const { email, password, } = formFields;
+    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
 
     console.log(formFields);
 
@@ -78,16 +81,21 @@ const SignInForm = () => {
 
                 <FormInput
                 label="Password"
-                type="password"
+                type={PasswordInputType}
                 required
                 onChange={handleChange}
                 name="password" 
-                value={password}/>
+                value={password}
+                />
+
+                <span className='password-toggle-icon'>{ToggleIcon}</span>
+                
 
             <div className='buttons-container'>
             <Button type="submit">SIGN IN</Button>
             <Button type='button' buttonType='google' onClick={signInWithGoogle}>Google Sign In</Button>
             </div>
+            <p>Don't have an account?<Link to='/sign-up-auth'><p>Click Here!</p></Link></p>
                
             </form>
 

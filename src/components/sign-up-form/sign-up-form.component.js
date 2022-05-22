@@ -4,6 +4,8 @@ import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '
 import './sign-up-form.styles.scss';
 import Button from '../button/button.component';
 import Swal from 'sweetalert2';
+import usePasswordToggle from '../password-visibilty-hook/usePasswordToggle';
+
 
 const defaultFormFields = {
     displayName: '',
@@ -15,6 +17,7 @@ const defaultFormFields = {
 const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields)
     const { displayName, email, password, confirmpassword } = formFields;
+    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -59,7 +62,7 @@ const SignUpForm = () => {
 
     return(
         <div className='sign-up-container'>
-            <h2>Don't have an account?</h2>
+            <h2>Dont have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}> 
                 <FormInput 
@@ -80,7 +83,7 @@ const SignUpForm = () => {
 
                 <FormInput
                 label="Password"
-                type="password"
+                type={PasswordInputType}
                 required
                 onChange={handleChange}
                 name="password" 
@@ -88,11 +91,13 @@ const SignUpForm = () => {
 
                 <FormInput 
                 label="Confirm Password"
-                type="password"
+                type={PasswordInputType}
                 required 
                 onChange={handleChange}
                 name="confirmpassword" 
                 value={confirmpassword}/>
+
+                <span className='password-toggle-icon'>{ToggleIcon}</span>
 
                 <Button type="submit">SIGN UP</Button>
             </form>
