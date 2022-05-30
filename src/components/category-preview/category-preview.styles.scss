@@ -1,25 +1,26 @@
 .category-preview-container {
-   padding: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
     gap: 20px;
     text-align: center;
+    font-weight: bold;
   
   
     .title {
-      font-size: 38px;
+      font-size: 30px;
       cursor: pointer;
       padding: 10px 15px;
       border: 2px;
       border-radius: 5px;
       color: white;
-      background-color: rgb(36, 36, 36);
+      background-color: rgb(33,37,41);
 
       &:hover {
         background-color:white;
-        color: rgb(36, 36, 36);
-        border: 1px solid rgb(36, 36, 36);
+        color: rgb(33,37,41);
+        border: 1px solid rgb(33,37,41);
         }
     }
   
