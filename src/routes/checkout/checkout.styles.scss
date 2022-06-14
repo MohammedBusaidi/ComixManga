@@ -5,6 +5,13 @@
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
+    padding: 80px;
+
+    h2 {
+      margin-right: auto;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
   
     .checkout-header {
       width: 100%;
@@ -12,10 +19,11 @@
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid darkgrey;
-  
+      
       .header-block {
         text-transform: capitalize;
         width: 23%;
+        
   
         &:last-child {
           width: 8%;
@@ -26,7 +34,28 @@
     .total {
       margin-top: 30px;
       margin-left: auto;
-      font-size: 36px;
+      font-size: 26px;
+    }
+
+    .paypal-button-container {
+      margin-top: -30px;
+      margin-left: auto;
+    }
+
+    .continue-shopping-button {
+      margin-right: 420px;
+      cursor: pointer;
+      border-radius: 20px;
+      height: 50px;
+      width: 15em;
+      background-color: white;
+      border: 1px solid rgb(33,37,41);
+
+      &:hover {
+        background-color: rgb(33,37,41);
+        color: white;
+        border-color: rgb(33,37,41);
+      }
     }
   }
   

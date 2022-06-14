@@ -1,4 +1,5 @@
 //the items inside the cart component.
+import React from 'react';
 
 import './cart-item.styles.scss';
 

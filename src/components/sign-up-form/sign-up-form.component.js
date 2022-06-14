@@ -1,13 +1,14 @@
+
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 
 import FormInput from '../form-input/form-input.component';
-import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
+import Button from '../button/button.component';
+
 import { signUpStart } from '../../store/user/user.action';
 
 import './sign-up-form.styles.scss';
-import Button from '../button/button.component';
 import Swal from 'sweetalert2';
 
 import usePasswordToggle from '../password-visibilty-hook/usePasswordToggle';
@@ -21,7 +22,7 @@ const defaultFormFields = {
 }
 
 const SignUpForm = () => {
-    const [formFields, setFormFields] = useState(defaultFormFields)
+    const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmpassword } = formFields;
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const SignUpForm = () => {
                 text: 'Password does not match!',
               })
             return;
-        };
+        }
 
         try {
             dispatch(signUpStart(email, password, displayName));
@@ -48,15 +49,16 @@ const SignUpForm = () => {
         } 
         catch(error) {
             if(error.code === 'auth/email-already-in-use' ) {
-                Swal.fire({
-                    icon: 'ERROR',
-                    title: 'Hi Love',
-                    text: 'Cannot create user, email already in use!',
-                  })
-            } else{
+                alert("Cannot create user, email already in use");
+                
+            } //if (error.code === 'auth/weak-password'){
+            //     alert("Password must be 6 characters or more");
+
+             //}
+             else{
             console.log('user creation encountered an error', error);
             }
-        };
+        }
     };
     
     const handleChange = (event) => {
@@ -68,7 +70,7 @@ const SignUpForm = () => {
     return(
         <div className='sign-up-container'>
             <h2>Dont have an account?</h2>
-            <span>Sign up with your email and password</span>
+            <span className='p1'>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}> 
                 <FormInput 
                 label="Display Name"
@@ -104,7 +106,7 @@ const SignUpForm = () => {
 
                 <span className='password-toggle-icon'>{ToggleIcon}</span>
 
-                <Button type="submit">SIGN UP</Button>
+                <Button className='buttons-container-sign-up' type="submit">SIGN UP</Button>
             </form>
 
         </div>

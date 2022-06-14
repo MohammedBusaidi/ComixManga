@@ -1,6 +1,7 @@
+import React from 'react';
 import { useState} from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import FormInput from '../form-input/form-input.component';
 import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
@@ -11,7 +12,6 @@ import Swal from 'sweetalert2';
 
 import usePasswordToggle from '../password-visibilty-hook/usePasswordToggle';
 
-
 const defaultFormFields = {
     email: '',
     password: '',
@@ -19,26 +19,26 @@ const defaultFormFields = {
 
 const SignInForm = () => {
     const dispatch = useDispatch();
-    const [formFields, setFormFields] = useState(defaultFormFields)
-    const { email, password, } = formFields;
+    const [formFields, setFormFields] = useState(defaultFormFields);
+    const { email, password } = formFields;
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
 
-    console.log(formFields);
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
-    };
+      };
 
-    const signInWithGoogle = async () => {
+      const signInWithGoogle = async () => {
         dispatch(googleSignInStart());
-    };
+      };
 
-    const handleSubmit  = async (event) => {
+      const handleSubmit = async (event) => {
         event.preventDefault();
-
+    
         try {
-            dispatch(emailSignInStart(email, password));
-            resetFormFields();
+          dispatch(emailSignInStart(email, password));
+          resetFormFields();
+          
         } catch(error) {
             switch(error.code) {
 
@@ -48,7 +48,6 @@ const SignInForm = () => {
                     title: 'Oops...',
                     text: 'Incorrect Password!',
                   })
-                    
                     break
                     case 'auth/user-not-found':
                     Swal.fire({
@@ -60,7 +59,6 @@ const SignInForm = () => {
                     default:
                     console.log(error);
             }
-            
         }
     };
     
@@ -73,7 +71,7 @@ const SignInForm = () => {
     return(
         <div className='sign-in-container'>
             <h2>Already have an account?</h2>
-            <span>Sign in with your email and password</span>
+            <span  className='p1'>Sign in with your email and password</span>
             <form onSubmit={handleSubmit}> 
                 <FormInput
                 label="Email"
@@ -97,9 +95,7 @@ const SignInForm = () => {
 
             <div className='buttons-container'>
             <Button type="submit">SIGN IN</Button>
-            <Button 
-            type='button' 
-            buttonType={BUTTON_TYPE_CLASSES.google} 
+            <Button type='button' buttonType={BUTTON_TYPE_CLASSES.google} 
             onClick={signInWithGoogle}>Google Sign In</Button>
             </div>
             <p>Don't have an account?<Link to='/sign-up-auth'><p>Click Here!</p></Link></p>

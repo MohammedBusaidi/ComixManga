@@ -6,16 +6,35 @@
     width: 380px;
     justify-content: center;
 
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        margin-left: 0%;
+        
+      } 
+
     p{
         margin-top: 5px;
         display: flex;
         align-items: baseline;
         gap: 5px;
         font-size: 15px;
+
+        @media screen and (max-width: 800px) {
+            padding-left: 5px;
+          } 
     }
 
     h2{
         margin: 10px 0;
+
+        @media screen and (max-width: 800px) {
+            text-align: center;
+          } 
+    }
+    .p1 {
+        @media screen and (max-width: 800px) {
+            text-align: center;
+          } 
     }
 
     .password-toggle-icon {
@@ -29,5 +48,10 @@
     .buttons-container{
         display: flex ;
         justify-content: space-between;
+
+        @media screen and (max-width: 800px) {
+            padding: 0px 10px 0 5px;
+            
+          } 
     }
 }

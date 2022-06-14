@@ -1,4 +1,5 @@
 // the scroll dropdown component page.
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

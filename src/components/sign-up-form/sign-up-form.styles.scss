@@ -4,6 +4,11 @@
     flex-direction: column;
     width: 380px;
 
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        margin-left: 0%;
+      } 
+
     .password-toggle-icon {
         position: absolute;
         top: 8px;
@@ -15,5 +20,21 @@
     h2{
         margin: 10px 0;
         
+        @media screen and (max-width: 800px) {
+            text-align: center;
+          } 
     }
+
+    .p1 {
+        @media screen and (max-width: 800px) {
+            text-align: center;
+          } 
+        }
+
+        .buttons-container-sign-up{
+           
+            @media screen and (max-width: 800px) {
+               margin-left: 30%;
+              } 
+        }
 }

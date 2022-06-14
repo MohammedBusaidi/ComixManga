@@ -1,4 +1,5 @@
 //the items inside the shop.
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCartItems } from '../../store/cart/cart.selector';

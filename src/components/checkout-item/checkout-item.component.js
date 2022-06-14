@@ -1,4 +1,5 @@
 //the items in the checkout page.
+import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -14,7 +15,6 @@ const CheckoutItem = ({cartItem}) => {
     const cartItems = useSelector(selectCartItems);
     
 
-
     const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, cartItem));
     const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
     const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, cartItem));
@@ -27,12 +27,12 @@ const CheckoutItem = ({cartItem}) => {
             </div>
             <span className='name'>{name}</span>
             <span className='quantity'>
-                <div className='arrow' onClick={removeItemHandler}>
-                    &#10094;
+                <div className='sign' onClick={removeItemHandler}>
+                &#45;
                 </div>
                 <span className='value'>{quantity}</span>
-                <div className='arrow' onClick={addItemHandler}>
-                &#10095;
+                <div className='sign' onClick={addItemHandler}>
+                &#43;
                 </div>
                 </span>
             <span className='price'>{price} OMR</span>

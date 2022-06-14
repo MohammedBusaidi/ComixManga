@@ -1,5 +1,7 @@
 //the home page category component.
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import './directory-item.styles.scss';
 
 const DirectoryItem = ({ category }) => {

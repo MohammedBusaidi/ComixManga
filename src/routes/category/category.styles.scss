@@ -4,9 +4,14 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
     row-gap: 50px;
-    
-   
-    
+
+    @media screen and (max-width: 800px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 10px;
+        padding: 0px;
+       } 
 }
 
 .category-title {
@@ -15,4 +20,8 @@
     margin-bottom: 25px;
     text-align: center;
     font-weight: bold;
+
+    @media screen and (max-width: 800px) {
+        margin: 10px;
+       } 
 }

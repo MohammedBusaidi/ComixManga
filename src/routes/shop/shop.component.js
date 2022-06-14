@@ -1,8 +1,7 @@
+import React from 'react';
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
-import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils';
 
 import { fetchCategoriesStart } from '../../store/categories/category.action';
 

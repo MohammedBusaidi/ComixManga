@@ -1,3 +1,4 @@
+import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Fragment} from 'react';
 
@@ -22,13 +23,7 @@ const Navigation = () => {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container"> 
     <Link  className="navbar-brand" to='/'>ComixManga</Link>
-
-    
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
         
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-      </ul>
-
       <div className='nav-links-container'>
           {currentUser ? (
             <span className='nav-link' onClick={signOutUser}>SIGN OUT</span> )
@@ -40,7 +35,7 @@ const Navigation = () => {
           <CartIcon />
           </div>
           {isCartOpen && <CartDropdown />}
-    </div>
+    
   </div>
   </nav>
         <Outlet />

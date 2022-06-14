@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import DirectoryItem from '../directory-item/directory-item.component';
 import './directory.styles.scss';
 
